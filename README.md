@@ -1,13 +1,12 @@
-# Project Name
+# Betterbnb
 
-> Project description
+> Clone of airbnb home listing page
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/Betterbnb/calendar
+  - https://github.com/Betterbnb/reviews
+  - https://github.com/Betterbnb/booking
 
 ## Table of Contents
 
