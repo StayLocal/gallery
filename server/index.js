@@ -19,14 +19,5 @@ app.get('/homes/:homeId/images', (req, res)=>{
 });
 
 
-//DO I NEED TO DO PROPER PUT DELETE POST ROUTING AND RESPOND WITH ALLOW METHODS TO BE RESTFUL?
-
-// app.post('/homes/images', (req, res)=>{
-
-// });
-
-// app.put('/homes/images', (req, res)=>{
-	
-// });
 
 app.listen(3003, () => console.log('listing on port 3003...'))
