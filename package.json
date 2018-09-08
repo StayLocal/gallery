@@ -8,10 +8,24 @@
     "node": ">=6.13.0"
   },
   "scripts": {
+    "start": "nodemon server/index.js",
+    "react-dev": "webpack -d --watch"
   },
   "dependencies": {
+    "express": "^4.16.3",
+    "mysql": "^2.16.0",
+    "nodemon": "^1.18.4",
+    "path-webpack": "0.0.3",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
   }
 }
