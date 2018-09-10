@@ -35,7 +35,7 @@ let dataGen = (number, array) => {
 	for (let i=100; i<100+number; i++) {
 		let randomArr = totalArr[Math.floor(Math.random()*10)]
 		randomArr.forEach((ele)=>{
-			let template = `INSERT INTO homeImages (home_id, image) VALUES (${i}, "${ele}"); `
+			let template = `INSERT INTO homeImages (home_id, image, caption) VALUES (${i}, "${ele}", "Some dreamy aspirational lorem ipsum caption here"); `
 			console.log(template)
 			result = result + template;
 		})

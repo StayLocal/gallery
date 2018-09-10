@@ -16,10 +16,12 @@
     "babel-core": "^7.0.0-bridge.0",
     "express": "^4.16.3",
     "mysql": "^2.16.0",
+    "node-fetch": "^2.2.0",
     "nodemon": "^1.18.4",
     "path-webpack": "0.0.3",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
+    "styled-components": "^3.4.6",
     "webpack": "^4.17.2",
     "webpack-cli": "^3.1.0"
   },
@@ -30,6 +32,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-jest": "^23.4.2",
     "babel-loader": "^8.0.2",
+    "babel-plugin-styled-components": "^1.6.4",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
     "enzyme-to-json": "^3.3.4",
@@ -41,7 +44,9 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
-    "setupFiles": ["./setupTests.js"]
+    "setupFiles": [
+      "./setupTests.js"
+    ]
   },
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"

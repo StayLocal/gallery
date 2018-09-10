@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
+import fetch from 'node-fetch';
 import App from './App.js';
 
 
