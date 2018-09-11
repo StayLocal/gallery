@@ -11,11 +11,19 @@ class App extends React.Component {
 		this.state = {
 			homeId: '100', //DEFAULTS TO HOME 100
 			imagesArr: [{image: null, caption: null}],
-			modalDisplay: false
+			modalDisplay: false,
+			featureImgObj: {image: null, caption: null},
+			photoListArr: [],
+			photoListShow: true
 		}
 
 		this.getPics = this.getPics.bind(this);
 		this.toggleModal = this.toggleModal.bind(this);
+		this.togglePhotoList = this.togglePhotoList.bind(this);
+		this.changeFeatureImg = this.changeFeatureImg.bind(this);
+		this.prevFeatureImg = this.prevFeatureImg.bind(this);
+		this.nextFeatureImg = this.nextFeatureImg.bind(this);
+
 	}
 
 	// getHomeId () {
@@ -29,7 +37,14 @@ class App extends React.Component {
 		fetch(url)
 		.then((res)=>{return res.json()})
 		.then((data)=>{
-			this.setState({imagesArr: data})
+			data = data.map((obj, index) => {
+				obj.index = index;
+				return obj
+			})
+			this.setState({
+				imagesArr: data,
+				featureImgObj: data[0]
+			})
 		})
 		.catch( (err)=> console.log(err) )
 	}
@@ -43,13 +58,46 @@ class App extends React.Component {
 		this.getPics();
 	}
 
+	changeFeatureImg(event) {
+		let index = event.target.getAttribute("index")
+		console.log(index)
+		this.setState((prevState, props)=>{
+			return {
+				featureImgObj: prevState.imagesArr[index]}
+		})
+	}
+
+	nextFeatureImg(event) {
+		if (this.state.featureImgObj.index-1 < this.state.imagesArr.length) {
+			this.setState((prevState, props)=>{
+				return {
+					featureImgObj: prevState.imagesArr[prevState.featureImgObj.index+1]}
+			})
+		}
+	}
+
+	prevFeatureImg(event) {
+		if (this.state.featureImgObj.index > 0) {
+			this.setState((prevState, props)=>{
+				return {
+					featureImgObj: prevState.imagesArr[prevState.featureImgObj.index-1]}
+			})
+		}
+	}
+
+	togglePhotoList() {
+		this.setState((prevState, props) => {
+			return {photoListShow: !prevState.photoListShow}
+		})
+	}
+
 	render() {
 		return (
 			<div>
-			<h1> Gallery Component </h1>
+			<h1> Gallery Component </h1> 
 			<div className="modal">
 			<img src={this.state.imagesArr[0].image} onClick={this.toggleModal}/>
-			<Modal imagesArr={this.state.imagesArr} modalDisplayState={this.state.modalDisplay} imagesArr={this.state.imagesArr}/>
+			<Modal imagesArr={this.state.imagesArr} modalDisplayState={this.state.modalDisplay} state={this.state} changeFeatureImg={this.changeFeatureImg} togglePhotoList={this.togglePhotoList} nextFeatureImg={this.nextFeatureImg} prevFeatureImg={this.prevFeatureImg}/>
 			</div>
 			</div>
 		)

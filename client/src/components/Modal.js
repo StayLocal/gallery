@@ -17,22 +17,16 @@ const StyledModal = styled.div`
   height: 100%;
   overflow: auto;
   background-color: rgba(0,0,0,0.85);
+  color: white;
+	font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	padding: 5%
 `
-
-class Modal extends React.Component {
-	constructor(props) {
-		super(props);
-
-	}
-
-	render() {
-		return (<StyledModal className="someclass" modalDisplayState={this.props.modalDisplayState}>
-			<FeatureImage imageObj={this.props.imagesArr[0]} />s
-
+function Modal(props) {
+	return (<StyledModal modalDisplayState={props.modalDisplayState}>
+			<FeatureImage imagesArr={props.state.imagesArr} changeFeatureImg={props.changeFeatureImg} imageNum={props.state.imageNum} photoListShow={props.state.photoListShow} togglePhotoList={props.togglePhotoList} featureImgObj={props.state.featureImgObj} nextFeatureImg={props.nextFeatureImg} prevFeatureImg={props.prevFeatureImg}/>
+			
 		</StyledModal>)
-	}
 }
-
 
 
 export {Modal};
