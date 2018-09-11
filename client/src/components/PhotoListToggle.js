@@ -20,7 +20,6 @@ function PhotoListToggle(props) {
 			start = props.imagesArr.length-9;
 			end = props.imagesArr.length-1;
 		}
-		console.log(props.imagesArr.slice(start, end))
 			return (
 				<div>
 				<div onClick={props.togglePhotoList}>

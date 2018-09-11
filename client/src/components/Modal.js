@@ -19,7 +19,8 @@ const StyledModal = styled.div`
   background-color: rgba(0,0,0,0.85);
   color: white;
 	font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	padding: 5%
+	padding: 5%;
+	margin: auto;
 `
 function Modal(props) {
 	return (<StyledModal modalDisplayState={props.modalDisplayState}>

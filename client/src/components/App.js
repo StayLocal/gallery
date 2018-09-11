@@ -9,7 +9,7 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			homeId: '100', //DEFAULTS TO HOME 100
+			homeId: '101', //DEFAULTS TO HOME 100
 			imagesArr: [{image: null, caption: null}],
 			modalDisplay: false,
 			featureImgObj: {image: null, caption: null},
@@ -60,7 +60,6 @@ class App extends React.Component {
 
 	changeFeatureImg(event) {
 		let index = event.target.getAttribute("index")
-		console.log(index)
 		this.setState((prevState, props)=>{
 			return {
 				featureImgObj: prevState.imagesArr[index]}
@@ -106,4 +105,3 @@ class App extends React.Component {
 
 export default App
 
-//PASS CAPTION INFO INTO PROP
