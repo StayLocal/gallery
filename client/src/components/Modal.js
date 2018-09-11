@@ -23,7 +23,7 @@ const StyledModal = styled.div`
 `
 function Modal(props) {
 	return (<StyledModal modalDisplayState={props.modalDisplayState}>
-			<FeatureImage imagesArr={props.state.imagesArr} changeFeatureImg={props.changeFeatureImg} imageNum={props.state.imageNum} photoListShow={props.state.photoListShow} togglePhotoList={props.togglePhotoList} featureImgObj={props.state.featureImgObj} nextFeatureImg={props.nextFeatureImg} prevFeatureImg={props.prevFeatureImg}/>
+			<FeatureImage imagesArr={props.state.imagesArr} toggleModal={props.toggleModal} changeFeatureImg={props.changeFeatureImg} imageNum={props.state.imageNum} photoListShow={props.state.photoListShow} togglePhotoList={props.togglePhotoList} featureImgObj={props.state.featureImgObj} nextFeatureImg={props.nextFeatureImg} prevFeatureImg={props.prevFeatureImg}/>
 			
 		</StyledModal>)
 }

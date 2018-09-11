@@ -97,7 +97,7 @@ class App extends React.Component {
 			<h1> Gallery Component </h1> 
 			<div className="modal">
 			<img src={this.state.imagesArr[0].image} onClick={this.toggleModal}/>
-			<Modal imagesArr={this.state.imagesArr} modalDisplayState={this.state.modalDisplay} state={this.state} changeFeatureImg={this.changeFeatureImg} togglePhotoList={this.togglePhotoList} nextFeatureImg={this.nextFeatureImg} prevFeatureImg={this.prevFeatureImg}/>
+			<Modal imagesArr={this.state.imagesArr} modalDisplayState={this.state.modalDisplay} state={this.state} changeFeatureImg={this.changeFeatureImg} togglePhotoList={this.togglePhotoList} nextFeatureImg={this.nextFeatureImg} prevFeatureImg={this.prevFeatureImg} toggleModal={this.toggleModal}/>
 			</div>
 			</div>
 		)
