@@ -3,8 +3,6 @@ import styled from 'styled-components';
 
 
 const StyledThumbnail = styled.div`
-	max-width: 100%;
-	max-height: 100%;
 	display: inline-block;
 `
 

@@ -4,7 +4,8 @@ import {PhotoListToggle} from './PhotoListToggle.js';
 
 
 const StyledFeatureImage = styled.div`
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   padding: 3%;
   object-fit: contain;
   vertical-align: middle;
@@ -12,45 +13,55 @@ const StyledFeatureImage = styled.div`
   font-size: 14px;
   line-height: 1.43;
 `
-const MiddleContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+
+const TopWrapper = styled.div`
+	display: flex;
+	flex-direction: row-reverse;
+	padding: 2%
 `
 
-const FeatureImageContainer = styled.div`
-  padding: 10%;
-  height: 100%;
-  max-width: 100%;
+const MiddleWrapper = styled.div`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2%;
+`
+
+const BottomWrapper = styled.div`
+	display: flex;
+	padding: 2%;
 `
 
 const StyledButton = styled.button`
 	height: 4.8em;
 	width: 4.8em;
 	fill: rgb(255, 255, 255);
+	background-color: transparent;
+	border-color: transparent
 `
 
 
 function FeatureImage (props) {
 	return (
-		<div>
+			<div onKeyDown={props.keyHandler} tabIndex="1">
 			<StyledFeatureImage>
-			<StyledButton onClick={props.toggleModal}>
-			<svg viewBox="0 0 47.971 47.971"><path d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88   c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242   C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879   s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z" ></path></svg>
-			</StyledButton>
-			<MiddleContainer>
-				<StyledButton onClick={props.prevFeatureImg}>
-					<svg viewBox="0 0 18 18" role="presentation" ><path d="m13.7 16.29a1 1 0 1 1 -1.42 1.41l-8-8a1 1 0 0 1 0-1.41l8-8a1 1 0 1 1 1.42 1.41l-7.29 7.29z" ></path></svg>
-				</StyledButton>	
-					<FeatureImageContainer>
-						<img src={props.featureImgObj.image}/>
-					</FeatureImageContainer>
-				<StyledButton onClick={props.nextFeatureImg}>
-					<svg viewBox="0 0 18 18" role="presentation" ><path d="m4.29 1.71a1 1 0 1 1 1.42-1.41l8 8a1 1 0 0 1 0 1.41l-8 8a1 1 0 1 1 -1.42-1.41l7.29-7.29z" ></path></svg>
+				<TopWrapper>
+				<StyledButton onClick={props.toggleModal}>
+				<svg viewBox="0 0 20 20"><path d="M8.882,7.821l6.541-6.541c0.293-0.293,0.293-0.768,0-1.061  c-0.293-0.293-0.768-0.293-1.061,0L7.821,6.76L1.28,0.22c-0.293-0.293-0.768-0.293-1.061,0c-0.293,0.293-0.293,0.768,0,1.061  l6.541,6.541L0.22,14.362c-0.293,0.293-0.293,0.768,0,1.061c0.147,0.146,0.338,0.22,0.53,0.22s0.384-0.073,0.53-0.22l6.541-6.541  l6.541,6.541c0.147,0.146,0.338,0.22,0.53,0.22c0.192,0,0.384-0.073,0.53-0.22c0.293-0.293,0.293-0.768,0-1.061L8.882,7.821z" ></path></svg>
 				</StyledButton>
-			</MiddleContainer>
-				<span>{props.featureImgObj.index+1}/{props.imagesArr.length} {props.featureImgObj.caption}</span>
-			<PhotoListToggle photoListShow={props.photoListShow} imagesArr={props.imagesArr} imageNum={props.imageNum} featureImgObj={props.featureImgObj} togglePhotoList={props.togglePhotoList} changeFeatureImg={props.changeFeatureImg} />
+				</TopWrapper>
+				<MiddleWrapper>
+					<StyledButton onClick={props.prevFeatureImg}>
+						<svg viewBox="0 0 18 18" ><path d="m13.7 16.29a1 1 0 1 1 -1.42 1.41l-8-8a1 1 0 0 1 0-1.41l8-8a1 1 0 1 1 1.42 1.41l-7.29 7.29z" ></path></svg>
+					</StyledButton>	
+							<img src={props.featureImgObj.image} height="500"/>
+					<StyledButton onClick={props.nextFeatureImg}>
+						<svg viewBox="0 0 18 18" ><path d="m4.29 1.71a1 1 0 1 1 1.42-1.41l8 8a1 1 0 0 1 0 1.41l-8 8a1 1 0 1 1 -1.42-1.41l7.29-7.29z" ></path></svg>
+					</StyledButton>
+				</MiddleWrapper>
+				<BottomWrapper>
+					<PhotoListToggle photoListShow={props.photoListShow} imagesArr={props.imagesArr} imageNum={props.imageNum} featureImgObj={props.featureImgObj} togglePhotoList={props.togglePhotoList} changeFeatureImg={props.changeFeatureImg} />
+				</BottomWrapper>
 		</StyledFeatureImage>
 		</div>
 	) 
