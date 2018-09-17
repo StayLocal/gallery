@@ -10,6 +10,7 @@ const StyledFeatureImage = styled.div`
   object-fit: contain;
   vertical-align: middle;
   margin: auto;
+  padding-top: 20%;
   font-size: 14px;
   line-height: 1.43;
 `
@@ -29,7 +30,7 @@ const MiddleWrapper = styled.div`
 
 const BottomWrapper = styled.div`
 	display: flex;
-	padding: 2%;
+	padding-bottom: 20%;
 `
 
 const StyledButton = styled.button`
