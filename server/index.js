@@ -7,11 +7,12 @@ app.use(express.static(__dirname + '/../public'));
 
 
 app.get('/homes/:homeId/images', (req, res)=>{
+		console.log('REQEST RECEIVED')
 	let callback = (err, data) => {
-		let imageArr = data.map((obj)=>{
-			return obj.image
-		})
-		res.send(imageArr)
+		// let imageArr = data.map((obj)=>{
+		// 	return [obj.image, obj.caption]
+		// })
+		res.send(data)
 	};
 
 	db.getImages(req.params.homeId, callback)

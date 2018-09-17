@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
 });
 
 var getImages = function(homeid, callback) {
-	connection.query(`SELECT image FROM homeImages WHERE home_id=${homeid}`, (err, results) => {
+	connection.query(`SELECT image, caption FROM homeImages WHERE home_id=${homeid}`, (err, results) => {
 		if (err) throw err;
 		callback(null, results);
 	})
