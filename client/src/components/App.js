@@ -4,7 +4,6 @@ import fetch from 'node-fetch';
 import {Modal} from './Modal.js';
 import styled from 'styled-components';
 
-
 class App extends React.Component {
 	constructor(props) {
 		super(props);
@@ -103,7 +102,6 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-			<h1> Gallery Component </h1> 
 			<div className="modal" onKeyDown={this.keyHandler} tabIndex="0">
 			<img src={this.state.imagesArr[0].image} onClick={this.toggleModal}/>
 			<div >

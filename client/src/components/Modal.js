@@ -5,7 +5,7 @@ import {FeatureImage} from './FeatureImage.js';
 
 //NEED TO SWITCH DISPLAY
 const StyledModal = styled.div`
-	display: ${props => props.modalDisplayState ? "none" : "block"};
+	display: ${props => props.modalDisplayState ? "block" : "none"};
   position: fixed;
   z-index: 1;
   top: 0;
