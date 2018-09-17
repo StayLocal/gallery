@@ -10,9 +10,9 @@ class App extends React.Component {
 		super(props);
 		this.state = {
 			homeId: '100', //DEFAULTS TO HOME 100
-			imagesArr: [{image: null, caption: null}],
+			imagesArr: [{image: null, caption: null, index: null}],
 			modalDisplay: false,
-			featureImgObj: {image: null, caption: null},
+			featureImgObj: {image: null, caption: null, index: null},
 			photoListArr: [],
 			photoListShow: true
 		}
@@ -77,7 +77,7 @@ class App extends React.Component {
 	}
 
 	nextFeatureImg(event) {
-		if (this.state.featureImgObj.index-1 < this.state.imagesArr.length) {
+		if (this.state.featureImgObj.index < this.state.imagesArr.length-1) {
 			this.setState((prevState, props)=>{
 				return {
 					featureImgObj: prevState.imagesArr[prevState.featureImgObj.index+1]}
@@ -104,9 +104,11 @@ class App extends React.Component {
 		return (
 			<div>
 			<h1> Gallery Component </h1> 
-			<div className="modal">
+			<div className="modal" onKeyDown={this.keyHandler} tabIndex="0">
 			<img src={this.state.imagesArr[0].image} onClick={this.toggleModal}/>
+			<div >
 			<Modal imagesArr={this.state.imagesArr} keyHandler={this.keyHandler} modalDisplayState={this.state.modalDisplay} state={this.state} changeFeatureImg={this.changeFeatureImg} togglePhotoList={this.togglePhotoList} nextFeatureImg={this.nextFeatureImg} prevFeatureImg={this.prevFeatureImg} toggleModal={this.toggleModal}/>
+			</div>
 			</div>
 			</div>
 		)

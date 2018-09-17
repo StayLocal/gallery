@@ -37,13 +37,13 @@ const StyledButton = styled.button`
 	width: 4.8em;
 	fill: rgb(255, 255, 255);
 	background-color: transparent;
-	border-color: transparent
+	border-color: transparent;
 `
 
 
 function FeatureImage (props) {
 	return (
-			<div onKeyDown={props.keyHandler} tabIndex="1">
+			<div>
 			<StyledFeatureImage>
 				<TopWrapper>
 				<StyledButton onClick={props.toggleModal}>

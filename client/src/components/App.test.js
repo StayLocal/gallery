@@ -10,5 +10,15 @@ describe('App', () => {
   
     expect(component).toMatchSnapshot();
   });
-});
 
+  it('should handle state changes', () => {
+	  const output = shallow(
+	    <App />
+	  );
+	  
+	  expect(output.state().clicked).toEqual(false);
+	  output.simulate('click');
+	  expect(output.state().clicked).toEqual(true);
+	});
+
+});
