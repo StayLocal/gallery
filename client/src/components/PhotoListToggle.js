@@ -6,8 +6,6 @@ import {PhotoList} from './PhotoList.js';
 const BottomTopWrapper = styled.div`
 	display: flex;
 	justify-content: space-between;
-	padding: 2%;
-	justify-content: space-between;
 `
 
 const BottomBottomWrapper = styled.div`

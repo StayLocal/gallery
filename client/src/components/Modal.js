@@ -14,7 +14,7 @@ const StyledModal = styled.div`
   right: 0;
   width: 100vw;
   height: 100vw;
-  overflow-y: auto;
+  overflow: auto;
   background-color: rgba(0,0,0,0.85);
   color: white;
 	font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;

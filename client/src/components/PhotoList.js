@@ -17,9 +17,9 @@ function Thumbnail(props) {
 
 const StyledPhotoList = styled.div`
 	display: flex;
-	width: 900px;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
+	width: 100%;
 `
 
 function PhotoList(props) {
