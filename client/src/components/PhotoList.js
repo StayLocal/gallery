@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 const StyledThumbnail = styled.div`
 	display: inline-block;
-	opacity: ${props => props.featured ? 1 : 0.6}
-
+	opacity: ${props => props.featured ? 1 : 0.6};
+	padding: 0.5%;
 `
 
 function Thumbnail(props) {
@@ -17,7 +17,6 @@ function Thumbnail(props) {
 
 const StyledPhotoList = styled.div`
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: space-evenly;
 	width: 100%;
 `

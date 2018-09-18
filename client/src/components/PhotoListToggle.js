@@ -18,13 +18,13 @@ const BottomBottomWrapper = styled.div`
 function PhotoListToggle(props) {
 	if (props.photoListShow) {		
 		let start = 0;
-		let end = 8	
-		if (props.featureImgObj.index > 4) {
-			start = props.featureImgObj.index-4;
+		let end = 7	
+		if (props.featureImgObj.index > 3) {
+			start = props.featureImgObj.index-3;
 			end = props.featureImgObj.index+4;
 		}
 		if (props.featureImgObj.index >= props.imagesArr.length-4) {
-			start = props.imagesArr.length-8;
+			start = props.imagesArr.length-7;
 			end = props.imagesArr.length;
 		}
 			return (
@@ -61,7 +61,6 @@ function PhotoListToggle(props) {
 				)
 		}
 }
-
 
 export {PhotoListToggle};
 
