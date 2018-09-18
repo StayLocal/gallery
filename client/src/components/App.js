@@ -102,12 +102,12 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-			<div className="modal" onKeyDown={this.keyHandler} tabIndex="0">
-			<img src={this.state.imagesArr[0].image} onClick={this.toggleModal}/>
-			<div >
-			<Modal imagesArr={this.state.imagesArr} keyHandler={this.keyHandler} modalDisplayState={this.state.modalDisplay} state={this.state} changeFeatureImg={this.changeFeatureImg} togglePhotoList={this.togglePhotoList} nextFeatureImg={this.nextFeatureImg} prevFeatureImg={this.prevFeatureImg} toggleModal={this.toggleModal}/>
-			</div>
-			</div>
+				<div className="modal" onKeyDown={this.keyHandler} tabIndex="0">
+					<img src={this.state.imagesArr[0].image} onClick={this.toggleModal}/>
+					<div >
+						<Modal imagesArr={this.state.imagesArr} keyHandler={this.keyHandler} modalDisplayState={this.state.modalDisplay} state={this.state} changeFeatureImg={this.changeFeatureImg} togglePhotoList={this.togglePhotoList} nextFeatureImg={this.nextFeatureImg} prevFeatureImg={this.prevFeatureImg} toggleModal={this.toggleModal}/>
+					</div>
+				</div>
 			</div>
 		)
 	}

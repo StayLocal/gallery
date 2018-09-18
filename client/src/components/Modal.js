@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import {FeatureImage} from './FeatureImage.js';
 
-
-//NEED TO SWITCH DISPLAY
 const StyledModal = styled.div`
 	display: ${props => props.modalDisplayState ? "block" : "none"};
   position: fixed;
@@ -26,7 +24,6 @@ function Modal(props) {
 	return (
 		<StyledModal modalDisplayState={props.modalDisplayState}>
 			<FeatureImage keyHandler={props.keyHandler} imagesArr={props.state.imagesArr} toggleModal={props.toggleModal} changeFeatureImg={props.changeFeatureImg} imageNum={props.state.imageNum} photoListShow={props.state.photoListShow} togglePhotoList={props.togglePhotoList} featureImgObj={props.state.featureImgObj} nextFeatureImg={props.nextFeatureImg} prevFeatureImg={props.prevFeatureImg}/>
-			
 		</StyledModal>)
 }
 
