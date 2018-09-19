@@ -32,7 +32,8 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 From within the root directory:
 
 ```sh
-npm install -g webpack
-npm install
+-Run npm install in terminal
+-Go into database/db-mysql.js and change log in info to your own
+-Run npm start
 ```
 

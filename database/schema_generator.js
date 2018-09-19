@@ -1,3 +1,5 @@
+var fs = require("fs");
+
 let imageArrGen = (location, num) => {
 	let result = [];
 	for (let i=1; i<num+1; i++) {
@@ -35,12 +37,40 @@ let dataGen = (number, array) => {
 	for (let i=100; i<100+number; i++) {
 		let randomArr = totalArr[Math.floor(Math.random()*10)]
 		randomArr.forEach((ele)=>{
-			let template = `INSERT INTO homeImages (home_id, image, caption) VALUES (${i}, "${ele}", "Some dreamy aspirational lorem ipsum caption here"); `
+			let template = `INSERT INTO homeImages (home_id, image, caption) VALUES (${i}, "${ele}", "Some aspirational lorem ipsum caption here"); `
 			console.log(template)
 			result = result + template;
 		})
 	}
-	return result;
+	let text = `
+	DROP DATABASE IF EXISTS gallery;
+
+	CREATE DATABASE gallery;
+
+	USE gallery;
+
+	CREATE TABLE homeImages (
+	  home_id int NOT NULL,
+	  image text,
+	  caption text
+	);
+
+
+	/*  Execute this file from the command line by typing:
+	 *    mysql -u root < schema.sql
+	 *  to create the database and the tables.*/
+	 `
+	return text.concat('', result);
 }
 
-dataGen(100, totalArr)
+
+fs.writeFile("./schema.sql",
+dataGen(100, totalArr), (err) => {
+    if (err) {
+        console.error(err);
+        return;
+    };
+    console.log("File has been created");
+});
+
+

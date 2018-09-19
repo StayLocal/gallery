@@ -1,7 +1,9 @@
 var mysql = require('mysql');
 
+
 var connection = mysql.createConnection({
-	user: 'root',
+	user: 'root', //CHANGE TO YOUR LOGIN USER AND PASSWORD
+	password: null,
 	database: 'gallery'
 });
 
