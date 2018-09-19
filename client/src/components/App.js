@@ -8,6 +8,10 @@ const StyledImage = styled.div`
 	width: 70%;
 	margin: auto;
 `
+const StyledModel = styled.div`
+	width: 100vw;
+	height: 100vw;
+`
 
 class App extends React.Component {
 	constructor(props) {

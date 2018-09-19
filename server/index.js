@@ -3,7 +3,7 @@ const db = require('../database/db-mysql');
 var path = require ('path')
 
 const app = express();
-app.use(express.static(__dirname + '/../public'));
+app.use('/homes/:homeId', express.static(__dirname + '/../public'));
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -12,7 +12,7 @@ app.use(function(req, res, next) {
 });
 
 app.get('/homes/:homeId/images', (req, res)=>{
-		console.log('REQUEST RECEIVED')
+		console.log('REQUEST RECEIVED', req.params.homeId)
 	let callback = (err, data) => {
 		// let imageArr = data.map((obj)=>{
 		// 	return [obj.image, obj.caption]

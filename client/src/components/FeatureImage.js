@@ -10,7 +10,6 @@ const StyledFeatureImage = styled.div`
   object-fit: contain;
   vertical-align: middle;
   margin: auto;
-  padding-top: 25%;
   font-size: 14px;
   line-height: 1.43;
 `
@@ -30,7 +29,7 @@ const MiddleWrapper = styled.div`
 
 const BottomWrapper = styled.div`
 	display: flex;
-	padding-bottom: 20%;
+	padding-bottom: 2%;
 	flex-direction: column;
 	justify-content: center;
 	padding-left: 10%;
@@ -44,7 +43,6 @@ const StyledButton = styled.button`
 	background-color: transparent;
 	border-color: transparent;
 `
-
 
 function FeatureImage (props) {
 	return (
