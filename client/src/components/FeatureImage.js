@@ -6,7 +6,7 @@ import {PhotoListToggle} from './PhotoListToggle.js';
 const StyledFeatureImage = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 3%;
+  padding: 2%;
   object-fit: contain;
   vertical-align: middle;
   margin: auto;
@@ -14,10 +14,14 @@ const StyledFeatureImage = styled.div`
   line-height: 1.43;
 `
 
+const StyledImage = styled.div`
+  display: flex;
+`
+
+
 const TopWrapper = styled.div`
 	display: flex;
 	flex-direction: row-reverse;
-	padding: 2%
 `
 
 const MiddleWrapper = styled.div`
@@ -29,7 +33,6 @@ const MiddleWrapper = styled.div`
 
 const BottomWrapper = styled.div`
 	display: flex;
-	padding-bottom: 2%;
 	flex-direction: column;
 	justify-content: center;
 	padding-left: 10%;
@@ -57,7 +60,9 @@ function FeatureImage (props) {
 					<StyledButton onClick={props.prevFeatureImg}>
 						<svg viewBox="0 0 18 18" ><path d="m13.7 16.29a1 1 0 1 1 -1.42 1.41l-8-8a1 1 0 0 1 0-1.41l8-8a1 1 0 1 1 1.42 1.41l-7.29 7.29z" ></path></svg>
 					</StyledButton>	
-							<img src={props.featureImgObj.image} height="500"/>
+					<StyledImage>
+							<img src={props.featureImgObj.image} height="400"/>
+					</StyledImage>
 					<StyledButton onClick={props.nextFeatureImg}>
 						<svg viewBox="0 0 18 18" ><path d="m4.29 1.71a1 1 0 1 1 1.42-1.41l8 8a1 1 0 0 1 0 1.41l-8 8a1 1 0 1 1 -1.42-1.41l7.29-7.29z" ></path></svg>
 					</StyledButton>
