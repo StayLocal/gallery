@@ -26,14 +26,17 @@ class App extends React.Component {
 
 	}
 
-	// getHomeId () {
-	// 	let homeId = window.location.href.split('/');
-	// 	homeId = homeId[homeId.length-1]; //THIS IS A STRING, NEED TO CONVERT TO INT?
-	// 	this.setState({homeId: homeId});
-	// }
+	getHomeId () {
+		this.setState({homeId: this.props.homeId}, ()=> {
+			this.getPics();
+		});
+	}
+
+			// let url = path.join('homes', this.state.homeId, 'images');
 
 	getPics() {
-		let url = path.join('homes', this.state.homeId, 'images');
+		let url = 'http://localhost:3003/homes/' + this.state.homeId + '/images';
+		console.log(url)
 		fetch(url)
 		.then((res)=>{return res.json()})
 		.then((data)=>{
@@ -63,7 +66,7 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
-		// this.getHomeId();
+		this.getHomeId();
 		this.getPics();
 	}
 

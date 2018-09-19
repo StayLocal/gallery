@@ -5,9 +5,14 @@ var path = require ('path')
 const app = express();
 app.use(express.static(__dirname + '/../public'));
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 app.get('/homes/:homeId/images', (req, res)=>{
-		console.log('REQEST RECEIVED')
+		console.log('REQUEST RECEIVED')
 	let callback = (err, data) => {
 		// let imageArr = data.map((obj)=>{
 		// 	return [obj.image, obj.caption]
