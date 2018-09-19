@@ -4,6 +4,11 @@ import fetch from 'node-fetch';
 import {Modal} from './Modal.js';
 import styled from 'styled-components';
 
+const StyledImage = styled.div`
+	width: 70%;
+	margin: auto;
+`
+
 class App extends React.Component {
 	constructor(props) {
 		super(props);
@@ -31,12 +36,10 @@ class App extends React.Component {
 			this.getPics();
 		});
 	}
-
 			// let url = path.join('homes', this.state.homeId, 'images');
 
 	getPics() {
 		let url = 'http://localhost:3003/homes/' + this.state.homeId + '/images';
-		console.log(url)
 		fetch(url)
 		.then((res)=>{return res.json()})
 		.then((data)=>{
@@ -105,12 +108,12 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
+					<StyledImage>
+						<img src={this.state.imagesArr[0].image} onClick={this.toggleModal} height="600px"/>
+					</StyledImage>
 				<div className="modal" onKeyDown={this.keyHandler} tabIndex="0">
-					<img src={this.state.imagesArr[0].image} onClick={this.toggleModal}/>
-					<div >
-						<Modal imagesArr={this.state.imagesArr} keyHandler={this.keyHandler} modalDisplayState={this.state.modalDisplay} state={this.state} changeFeatureImg={this.changeFeatureImg} togglePhotoList={this.togglePhotoList} nextFeatureImg={this.nextFeatureImg} prevFeatureImg={this.prevFeatureImg} toggleModal={this.toggleModal}/>
-					</div>
-				</div>
+					<Modal imagesArr={this.state.imagesArr} keyHandler={this.keyHandler} modalDisplayState={this.state.modalDisplay} state={this.state} changeFeatureImg={this.changeFeatureImg} togglePhotoList={this.togglePhotoList} nextFeatureImg={this.nextFeatureImg} prevFeatureImg={this.prevFeatureImg} toggleModal={this.toggleModal}/>
+			  </div>
 			</div>
 		)
 	}
