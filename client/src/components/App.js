@@ -5,8 +5,11 @@ import {Modal} from './Modal.js';
 import styled from 'styled-components';
 
 const StyledImage = styled.div`
-	width: 70%;
+	width: 100%;
+	max-height: 552px;
 	margin: auto;
+	vertical-align: middle;
+	overflow: hidden;
 `
 const StyledModel = styled.div`
 	width: 100vw;
@@ -43,7 +46,7 @@ class App extends React.Component {
 			// let url = path.join('homes', this.state.homeId, 'images');
 
 	getPics() {
-		let url = 'http://localhost:3003/homes/' + this.state.homeId + '/images';
+		let url = '/homes/' + this.state.homeId + '/images';
 		fetch(url)
 		.then((res)=>{return res.json()})
 		.then((data)=>{
@@ -113,7 +116,7 @@ class App extends React.Component {
 		return (
 			<div>
 					<StyledImage>
-						<img src={this.state.imagesArr[0].image} onClick={this.toggleModal} height="600px"/>
+						<img src={this.state.imagesArr[0].image} onClick={this.toggleModal} width="100%"/>
 					</StyledImage>
 				<div className="modal" onKeyDown={this.keyHandler} tabIndex="0">
 					<Modal imagesArr={this.state.imagesArr} keyHandler={this.keyHandler} modalDisplayState={this.state.modalDisplay} state={this.state} changeFeatureImg={this.changeFeatureImg} togglePhotoList={this.togglePhotoList} nextFeatureImg={this.nextFeatureImg} prevFeatureImg={this.prevFeatureImg} toggleModal={this.toggleModal}/>

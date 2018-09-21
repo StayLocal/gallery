@@ -5,7 +5,7 @@ import {FeatureImage} from './FeatureImage.js';
 const StyledModal = styled.div`
 	display: ${props => props.modalDisplayState ? "block" : "none"};
   position: fixed;
-  z-index: 1;
+  z-index: 20;
   top: 0;
   left: 0;
   bottom: 0;

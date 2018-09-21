@@ -6,7 +6,6 @@ import {PhotoListToggle} from './PhotoListToggle.js';
 const StyledFeatureImage = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 2%;
   object-fit: contain;
   vertical-align: middle;
   margin: auto;
